@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Flowery Haven</title>
+
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0;
+        padding: 0;
+        outline: none;
+        border: none;
+        text-transform: capitalize;
+        transition: 2s linear;
+        background-color: #ebe0e0c2;
+        color: #333;
+        font-size: 68.5%;
+        scroll-behavior: smooth;
+        scroll-padding-top: 6rem;
+        overflow-x: hidden;
+        flex: 1;
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+
+
+      /*head*/
+
+      header {
+        position: sticky;
+        background-color: #ebe0e0;
+        color: #573c3c;
+        padding: 20px;
+        text-align: center;
+        align-items: center;
+        display: center;
+        justify-content: space-between;
+        z-index: 1000;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+
+      header {
+        background: linear-gradient(135deg, #b05482, #a26f85);
+        padding: 25px 0;
+        text-align: center;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+
+      .logo {
+        width: 120px;
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 50%;
+      }
+
+      .header-text h1 {
+        font-size: 3rem;
+        font-family: "Georgia", serif;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .header-text p {
+        font-size: 1.2rem;
+        margin: 10px 0 20px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      .cta-button {
+        background-color: #fff;
+        color: #b05482;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .cta-button:hover {
+        background-color: #a26f85;
+        color: white;
+        transform: scale(1.05);
+      }
+
+      /* navigasi */
+
+      nav {
+        background-color: #333;
+        padding: 10px;
+        text-align: center;
+        top: 0;
+        z-index: 1;
+        position: sticky;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 14px 20px;
+        display: inline-block;
+        font-size: 1.1em;
+        font-weight: bold;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #b79393;
+        color: black;
+        border-radius: 20px;
+      }
+
+      /* home */
+
+      .hero {
+        background-image: url("gambar3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: rgb(255, 255, 255);
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 3em;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .hero button {
+        margin-top: 20px;
+        background-color: #b05482;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 1.2em;
+        transition: background-color 0.3s;
+      }
+
+      .hero button:hover {
+        background-color: #781253;
+      }
+
+      .content {
+        padding: 40px 20px;
+        text-align: center;
+        flex: 1;
+      }
+
+      .content h2 {
+        color: #a26f85;
+        margin-bottom: 20px;
+        font-size: 2.2em;
+      }
+
+      
+
+      /* products and reviews */
+
+      .products,
+      .reviews {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;  
+      }
+
+      .product,
+      .review {
+        background-color: white;
+        margin: 25px;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 250px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .product:hover {
+        transform: scale(1.05);
+        background-color: #af77a0;
+      }
+
+      .rating {
+        font-size: 20px;
+        color: gold;
+    }
+
+      .review img.profile-img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .product img {
+        width: 100%;
+        height: 70%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      .gallery {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .profile-pic {
+        width: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      
+      .profile-pic img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #d7a0a0;
+      }
+      
+      .name {
+        margin-top: 10px;
+        font-size: 10px;
+        color: rgb(91, 72, 72);
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+      }
+      .profile-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 120px;
+      }
+
+      .profil-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 120px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      textarea {
+        resize: vertical;
+        height: 100px;
+      }
+
+      input[type="submit"] {
+        background-color: #b05482;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #781253;
+      }   
+      
+      .footer {
+        grid-area: footer;
+        background-color: #01080db2;
+        color: white;
+        font-size: small;
+        padding: 5px 15px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <img src="logo3.jpg" alt="Toko Seruni Florist Logo" class="logo" />
+        <div class="header-text">
+          <h1>The Flowery Haven</h1>
+          <p>Natural & Beautiful Flowers</p>
+          <a href="#product" class="cta-button">Explore Products</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#product">Product</a>
+      <a href="#review">Review</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About Us</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div>
+        <h2>The Flowery Haven,</h2>
+        <h4>
+          <p>
+            Di The Flowery Haven, kami menyambut Anda dengan koleksi bunga segar
+            dan indah yang dirancang untuk setiap kesempatan. Dari perayaan
+            istimewa hingga hari-hari biasa, kami menawarkan rangkaian bunga
+            yang elegan dan penuh warna, dipilih dengan penuh perhatian. Tim
+            kami yang ramah siap membantu Anda menemukan bunga yang sempurna,
+            memastikan setiap desain memancarkan keindahan dan makna. Temukan
+            oasis bunga kami dan biarkan kami membuat momen Anda lebih spesial
+            dengan sentuhan keindahan alami..
+          </p>
+        </h4>
+        <button onclick="document.getElementById('shopForm').scrollIntoView();">
+          Shop Now
+        </button>
+      </div>
+    </section>
+
+    <!-- Section Produk -->
+    <div id="product" class="content">
+      <div class="product-card"></div>
+      <h2>product</h2>
+      <div class="products">
+        <div class="product">
+          <img src="matahari.jpg" alt="Heliatus annuus" />
+          <h3>Heliatus annuus</h3>
+          <p>Harga: Rp 150.000</p>
+          <div class="rating"> ★★★☆☆</div>
+        </div>
+        <div class="product">
+          <img src="tulip.jpg" alt="Tulipa sylvestris" />
+          <h3>Tulipa sylvestris</h3>
+          <p>Harga: Rp 200.000</p>
+          <div  class="rating">★★★★★</div> 
+        </div>
+        <div class="product">
+          <img src="anggrek.jpg" alt="Dendrodium nobile" />
+          <h3>Dendrodium nobile</h3>
+          <p>Harga: Rp 180.000</p>
+          <div  class="rating">★★★★☆</div>
+        </div>
+        <div class="product">
+          <img src="daffodil.jpg" alt="Narcissus pseudonarcissus" />
+          <h3>Narcissus pseudonarcissus</h3>
+          <p>Harga: Rp 180.000</p>
+          <div class="rating">★★★★★</div>
+        </div>
+        <div class="product">
+          <img src="lily.jpg" alt="Lilium longiflorum" />
+          <h3>Lilium longiflorum</h3>
+          <p>Harga: Rp 180.000</p>
+          <div class="rating">★★★★★</div>
+        </div>
+        <div class="product">
+          <img src="peoni.jpg" alt="Peony lactiflora" />
+          <h3>Peony lactiflora</h3>
+          <p>Harga: Rp 180.000</p>
+          <div class="rating">★★★★★</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Section -->
+    <section id="review" class="content">
+      <h2>Customer Reviews</h2>
+      <div class="reviews">
+        <div class="review">
+          <img src="maria.jpg" alt="Profile Maria" class="profile-img" />
+          <h3>Maria</h3>
+          <p>
+            "Bunga-bunga di sini sangat segar dan indah! Pelayanan juga ramah."
+          </p>
+        </div>
+        <div class="review">
+          <img src="rudi.jpg" alt="Profile Rudi" class="profile-img" />
+          <h3>Rudi</h3>
+          <p>
+            "Pesanan bunga pernikahan sangat memuaskan, desainnya sangat
+            cantik."
+          </p>
+        </div>
+        <div class="review">
+          <img src="siti.jpg" alt="Profile Siti" class="profile-img" />
+          <h3>Siti</h3>
+          <p>
+            "Harga terjangkau dan kualitas bunga luar biasa. Pasti akan pesan
+            lagi!"
+          </p>
+        </div>
+        <div class="review">
+          <img src="farhan.jpg" alt="Profile Siti" class="profile-img" />
+          <h3>farhan</h3>
+          <p>
+            "Harga terjangkau dan kualitas bunga luar biasa. Pasti akan pesan
+            lagi!"
+          </p>
+        </div>
+        <div class="review">
+          <img src="sinta.jpg" alt="Profile Siti" class="profile-img" />
+          <h3>Sinta</h3>
+          <p>
+            "Harga terjangkau dan kualitas bunga luar biasa. Pasti akan pesan
+            lagi!"
+          </p>
+        </div>
+        <div class="review">
+          <img src="kelvin.jpg" alt="Profile Siti" class="profile-img" />
+          <h3>kelvin</h3>
+          <p>
+            "Harga terjangkau dan kualitas bunga luar biasa. Pasti akan pesan
+            lagi!"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content">
+      <h2>Contact Us</h2>
+      <b
+        ><p>Jl. Andi Djemma Jl. Bonto Langkasa No.7,</p>
+        <p>Mannuruki, Kec. Tamalate, Kota Makassar,</p>
+        <i>Sulawesi Selatan.</i></b
+      >
+    </section>
+
+    <!-- Shop Form Section -->
+    <section id="shopForm" class="content">
+      <h2>Order Now</h2>
+      <form>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Name"
+          required
+        /><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        /><br />
+        <input
+          type="tel"
+          id="number"
+          name="number"
+          placeholder="Phone Number"
+        /><br />
+        <textarea id="pesan" name="pesan" placeholder="Order Details"></textarea
+        ><br />
+        <input type="submit" value="Send Order" />
+      </form>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="content">
+      <h2>About Us</h2>
+      <p>
+        Kami dari Kelompok 5 mempersembahkan sebuah proyek dengan tema Toko Bunga <br>
+        alam mata kuliah Pemrograman Web. Proyek ini dirancang untuk memberikan pengalaman berbelanja bunga secara online yang menyenangkan dan mudah diakses.
+      </p>
+      <div class="gallery">
+        <div class="profile-pic">
+            <img src="ummul.jpg" alt="Profil 1" />
+            <div class="name">ummul khaeri masna</div>
+        </div>
+        <div class="profile-pic">
+            <img src="sakina.jpg" alt="Profil 2" />
+            <div class="name">sakinah mawaddah</div>
+        </div>
+        <div class="profile-pic">
+            <img src="Riki.jpg" alt="Profil 3" />
+            <div class="name">Rizky ferdian</div>
+        </div>
+        <div class="profile-pic">
+            <img src="muhajji.jpg" alt="Profil 4" />
+            <div class="name">Rifky Muhajji</div>
+    </div>
+        </div>
+    </div>
+      </div>
+
+    <!-- Footer -->
+    <footer>
+      <small>&copy; KELOMPOK 5 | PEMROGRAMAN WEB </small>
+    </footer>
+  </body>
+</html>
